@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "/KevinJN03/memory-card/static/css/main.e617bf86.css",
-    "main.js": "/KevinJN03/memory-card/static/js/main.86f764ac.js",
-    "static/media/donald-duck.png": "/KevinJN03/memory-card/static/media/donald-duck.cbcb75aa157c77e52002.png",
-    "static/media/waltographUI.ttf": "/KevinJN03/memory-card/static/media/waltographUI.066250ea6fa287a7d606.ttf",
-    "static/media/github (1).svg": "/KevinJN03/memory-card/static/media/github (1).b40d2f718d62698df5961e7473b4c6e7.svg",
-    "index.html": "/KevinJN03/memory-card/index.html",
-    "main.e617bf86.css.map": "/KevinJN03/memory-card/static/css/main.e617bf86.css.map",
-    "main.86f764ac.js.map": "/KevinJN03/memory-card/static/js/main.86f764ac.js.map"
+    "main.css": "/memory-card/static/css/main.c0a40807.css",
+    "main.js": "/memory-card/static/js/main.66499670.js",
+    "static/media/donald-duck.png": "/memory-card/static/media/donald-duck.cbcb75aa157c77e52002.png",
+    "static/media/waltographUI.ttf": "/memory-card/static/media/waltographUI.066250ea6fa287a7d606.ttf",
+    "static/media/github (1).svg": "/memory-card/static/media/github (1).b40d2f718d62698df5961e7473b4c6e7.svg",
+    "index.html": "/memory-card/index.html",
+    "main.c0a40807.css.map": "/memory-card/static/css/main.c0a40807.css.map",
+    "main.66499670.js.map": "/memory-card/static/js/main.66499670.js.map"
   },
   "entrypoints": [
-    "static/css/main.e617bf86.css",
-    "static/js/main.86f764ac.js"
+    "static/css/main.c0a40807.css",
+    "static/js/main.66499670.js"
   ]
 }
