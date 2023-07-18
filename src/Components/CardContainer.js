@@ -1,31 +1,40 @@
 import { styled } from "styled-components";
 import Card from "./card";
-import { useEffect, useState } from "react";
-import _, { shuffle } from "lodash";
+import { useEffect, useState, useRef, useCallback } from "react";
+import _, { shuffle, isEqual } from "lodash";
 const CardContainer = () => {
     const [character, setCharacter] = useState([]);
-    const [fetchLength, setFetchLength] = useState(4);
+    const prevCharacterRef = useRef();
+    const [fetchLength, setFetchLength] = useState(1);
     const URL = "https://api.disneyapi.dev/character";
     const [loading, setLoading] = useState(false)
 
+   const shuffle = () =>  {
+            let shuffleCharacter = _.shuffle(character);
+           return shuffleCharacter
+           //setCharacter(shuffleCharacter)
+          }
+
     useEffect(() => {
-        
         fetchCharacters(fetchData(), fetchLength);
-    
-        
       }, []);
 
       useEffect(()=> {
-        console.log("update characters")
-    //    setCharacter(character)
-    //shuffle(character)
-        
-        //setCharacter(shuffle())
-        return () => {
-            console.log("return update")
-
+        if(character.every(char => char.clicked === true)){
+            setFetchLength(fetchLength + 2);
         }
+       
       }, [character])
+
+      useEffect(()=> {
+        console.log("fetchLength Change", fetchLength)
+        fetchCharacters(fetchData(), fetchLength);
+
+       
+      }, [fetchLength])
+
+
+
 
     const fetchData = async () => {
         let response = await fetch(URL);
@@ -65,13 +74,13 @@ const CardContainer = () => {
           //console.log(random)
           return random;
         }
-        setCharacter(...character, arr);
+        setCharacter(arr);
       }
     
       function handleClick(id){
         
-        const shuffleCharacter = shuffle();
-const updatedCharacter = shuffleCharacter.map((char)=> {
+       // const shuffleCharacter = shuffle();
+const updatedCharacter = character.map((char)=> {
     if (char.id === id) {
         console.log("this is the object ", char);
         return { ...char, clicked: true };
@@ -86,11 +95,7 @@ setCharacter(updatedCharacter)
         
       };
       // function that shuffles the characters
-      function shuffle() {
-        let shuffleCharacter = _.shuffle(character);
-       
-       return shuffleCharacter
-      }
+      
     return (
     <section id="card-container">
       <Container>
@@ -98,7 +103,7 @@ setCharacter(updatedCharacter)
           return (
             <Card
               name={char.name}
-              image={char.image}
+              image={char.image }
               id={char.id}
               key={char.id}
               handleClick={ handleClick}
