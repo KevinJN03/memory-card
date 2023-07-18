@@ -2,9 +2,10 @@ export default function Card({image, name, id, handleClick}) {
     return(
         <div className="card" id={id} onClick={() => handleClick(id)}>
             <section className="img-container">
-        <img src={image}/>
+        <img src={image} alt={name + " from disney"}/>
             </section>
-            <p>{name}</p>
+            <section className="name-container"> <p>{name}</p></section>
+           
         </div >
     )
 }

@@ -1,11 +1,16 @@
 
+import { useState } from 'react';
 import './App.css';
-import Main from './Components/Main';
+import CardContainer from './Components/CardContainer';
+import Footer from "./Components/Footer"
+import Header from './Components/header';
 
 function App() {
   return (
     <div className="App">
-      <Main></Main>
+      <Header/>
+      <CardContainer/>
+      <Footer/>
     </div>
   );
 }
